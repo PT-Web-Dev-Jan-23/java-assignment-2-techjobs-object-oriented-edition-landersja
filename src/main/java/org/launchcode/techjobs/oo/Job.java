@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import org.junit.Test;
+
 import java.util.Objects;
 
 public class Job {
@@ -94,6 +96,25 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+
+        if( this.name == ""){
+             this.name = ("Data not available");
+        }  if (this.employer.getValue() == "" ) {
+            this.employer.setValue("Data not available");
+        } if (this.location.getValue() == ""){
+            this.location.setValue("Data not available");
+        } if(this.positionType.getValue() == ""){
+            this.positionType.setValue("Data not available");
+        } if(this.coreCompetency.getValue() == ""){
+            this.coreCompetency.setValue("Data not available");
+        }
+        return "\nID: " + this.id + "\nName: " + this.name + "\nEmployer: " + this.employer + "\nLocation: " + this.location + "\nPosition Type: " + this.positionType + "\nCore Competency: " + this.coreCompetency + "\n";
+
+    }
+//need to add .getValue() at the end of the other types like Employer, Position Type, etc because this.name is already string.
 }
 
 
